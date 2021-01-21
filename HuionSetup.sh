@@ -10,14 +10,14 @@ PRIMARY_SCREEN_ID=$(xrandr | grep primary | cut -d " " -f 1)
 #SECONDARY_SCREEN_ID=$(xrandr | grep HDMI-0 | cut -d " " -f 1)
 
 # Reset
-xsetwacom --set $STYLUS_ID ResetArea
+xsetwacom --set "$STYLUS_ID" ResetAreaq
 
 # Sensitivity(smoothness of strokes) -> Default 4, Range 1 - 20
-xsetwacom --set $PAD_ID RawSample 12
+xsetwacom --set "$PAD_ID" RawSample 12
 
 
 # Accept input from tablet to specified screen
-xinput map-to-output $STYLUS_ID $PRIMARY_SCREEN_ID
+xinput map-to-output "$STYLUS_ID" "$PRIMARY_SCREEN_ID"
 
 
 
